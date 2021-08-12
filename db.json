@@ -1,0 +1,254 @@
+{
+  "products": [
+    {
+      "id": "1.2.02.3.18.002.121.23",
+      "name": "ÁO PHÔNG OVERSIZED BOOLAAB",
+      "description": "Áo phông BOOLAAB dáng oversize là một trong những item đang được yêu thích nhất trong giới trẻ hiện nay. Áo được thiết kế kiểu dáng rộng rãi, thích hợp cho cả nam và nữ - Áo thun unisex form rộng có thể phối nhiều item khác nhau (demim, flannel, short, jogger.....) mang tới phong cách năng động, cá tính cho người mặc - Sản phẩm 100% cotton, đường may tinh tế chắc chắn với bề mặt vải mềm mại, thấm hút mồ hôi tốt tạo cảm giác thoáng mát cho người mặc. - Không ra màu, không bai, không xù, không bám dính",
+      "price": 490000,
+      "colors": ["Xanh", "Hồng"],
+      "sizes": [
+        {
+          "name": "XS",
+          "quantity": 12
+        },
+        {
+          "name": "S",
+          "quantity": 12
+        },
+        {
+          "name": "M",
+          "quantity": 12
+        },
+        {
+          "name": "L",
+          "quantity": 12
+        },
+        {
+          "name": "XL",
+          "quantity": 12
+        }
+      ],
+      "sold": 123,
+      "material": "Cotton",
+      "concept": "Mùa FW19",
+      "categories": [
+        "QUẦN ÁO",
+        "HÀNG MỚI"
+      ],
+      "subcategory": "Áo phông",
+      "keywords": [
+        "Oversize"
+      ],
+      "click": 3,
+      "added": 5
+    },
+    {
+      "id": "1.2.02.3.18.002.121.23",
+      "name": "ÁO PHÔNG OVERSIZED BOOLAAB",
+      "description": "Áo phông BOOLAAB dáng oversize là một trong những item đang được yêu thích nhất trong giới trẻ hiện nay. Áo được thiết kế kiểu dáng rộng rãi, thích hợp cho cả nam và nữ - Áo thun unisex form rộng có thể phối nhiều item khác nhau (demim, flannel, short, jogger.....) mang tới phong cách năng động, cá tính cho người mặc - Sản phẩm 100% cotton, đường may tinh tế chắc chắn với bề mặt vải mềm mại, thấm hút mồ hôi tốt tạo cảm giác thoáng mát cho người mặc. - Không ra màu, không bai, không xù, không bám dính",
+      "price": 490000,
+      "colors": ["Trắng", "Đen"],
+      "sizes": [
+        {
+          "name": "XS",
+          "quantity": 12
+        },
+        {
+          "name": "S",
+          "quantity": 12
+        },
+        {
+          "name": "M",
+          "quantity": 12
+        },
+        {
+          "name": "L",
+          "quantity": 12
+        },
+        {
+          "name": "XL",
+          "quantity": 12
+        }
+      ],
+      "sold": 123,
+      "material": "Cotton",
+      "concept": "Mùa FW19",
+      "categories": [
+        "QUẦN ÁO",
+        "HÀNG MỚI"
+      ],
+      "subcategory": "Áo phông",
+      "keywords": [
+        "Oversize"
+      ],
+      "click": 3,
+      "added": 5
+    },
+    {
+      "id": "1.2.02.3.18.002.121.23",
+      "name": "QUẦN JOGGER NAM JEANS RELAX MANDAB",
+      "description": "Áo phông BOOLAAB dáng oversize là một trong những item đang được yêu thích nhất trong giới trẻ hiện nay. Áo được thiết kế kiểu dáng rộng rãi, thích hợp cho cả nam và nữ - Áo thun unisex form rộng có thể phối nhiều item khác nhau (demim, flannel, short, jogger.....) mang tới phong cách năng động, cá tính cho người mặc - Sản phẩm 100% cotton, đường may tinh tế chắc chắn với bề mặt vải mềm mại, thấm hút mồ hôi tốt tạo cảm giác thoáng mát cho người mặc. - Không ra màu, không bai, không xù, không bám dính",
+      "price": 490000,
+      "colors": ["Vàng", "Xanh" ],
+      "sizes": [
+        {
+          "name": "XS",
+          "quantity": 12
+        },
+        {
+          "name": "S",
+          "quantity": 12
+        },
+        {
+          "name": "M",
+          "quantity": 12
+        },
+        {
+          "name": "L",
+          "quantity": 12
+        },
+        {
+          "name": "XL",
+          "quantity": 12
+        }
+      ],
+      "sold": 123,
+      "material": "Cotton",
+      "concept": "Mùa FW19",
+      "categories": [
+        "QUẦN ÁO",
+        "HÀNG MỚI"
+      ],
+      "subcategory": "Quần Jeans",
+      "keywords": [
+        "Oversize"
+      ],
+      "click": 3,
+      "added": 5
+    }
+  ],
+  "users": [
+    {
+      "id": "234928374",
+      "role": "user",
+      "name": "Long",
+      "phone": "0000000",
+      "email": "longlong@gmail.com",
+      "dob": "007/21/2000",
+      "gender": true,
+      "address": "01/02/03",
+      "subscribed": false,
+      "delivery": [
+        {
+          "name": "Long",
+          "phone": "0000000",
+          "address": "01/02/03"
+        }
+      ],
+      "cart": {
+        "products": [
+          {
+            "id": "p1-id",
+            "amount": 2
+          },
+          {
+            "id": "p2-id",
+            "amount": 4
+          }
+        ],
+        "total": 400000
+      }
+    },
+    {
+      "id": "Ar5KDqTpAAboAsO5zPj3C2k9IFy1",
+      "role": "user",
+      "name": "Long",
+      "phone": "99999999",
+      "email": "test@gmail.com",
+      "dob": "",
+      "gender": true,
+      "address": "",
+      "subscribed": false,
+      "delivery": [],
+      "cart": {
+        "products": [],
+        "total": 0
+      }
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "owner": "user1-id",
+      "created": "04/08/2019",
+      "paymentMethod": "Thanh toan khi nhan hang",
+      "status": "Hoan thanh",
+      "products": [
+        {
+          "id": "p1-id",
+          "amount": 2
+        },
+        {
+          "id": "p2-id",
+          "amount": 4
+        }
+      ],
+      "total": 400000,
+      "message": "Hi hi hi hi h ih ih i."
+    }
+  ],
+  "colors": [
+    "Vàng",
+    "Ghi",
+    "Xanh"
+  ],
+  "materials": [
+    "Kaki",
+    "Cotton",
+    "Nỉ",
+    "Bò",
+    "Lông cùn"
+  ],
+  "categories": [
+    {
+      "name": "HÀNG MỚI"
+    },
+    {
+      "name": "QUẦN ÁO",
+      "subcategories": [
+        "ÁO PHÔNG",
+        "ÁO BA LỖ",
+        "ÁO SƠ MI",
+        "ÁO THUN DÀI TAY",
+        "ÁO LEN",
+        "ÁO NỈ KHÔNG MŨ",
+        "ÁO NỈ MŨ",
+        "ÁO KHOÁC NỈ",
+        "ÁO KHOÁC",
+        "QUẦN SHORT",
+        "QUẦN JEANS",
+        "QUẦN DÀI",
+        "QUẦN KAKI",
+        "QUẦN JOGGER"
+      ]
+    },
+    {
+      "name": "PHỤ KIỆN",
+      "subcategories": [
+        "TẤT CẢ PHỤ KIỆN",
+        "KHẨU TRANG",
+        "MŨ",
+        "TÚI"
+      ]
+    },
+    {
+      "name": "BỘ SƯU TẬP",
+      "subcategories": [
+        "BOO Y2K"
+      ]
+    }
+  ],
+  "keywords": [
+    "Oversize"
+  ]
+}
