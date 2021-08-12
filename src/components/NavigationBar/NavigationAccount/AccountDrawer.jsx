@@ -1,4 +1,4 @@
-import { Drawer, makeStyles } from "@material-ui/core"
+import { Drawer, makeStyles } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import { uiActions } from "../../../store/ui-slice";
 import AccountManagement from "../../AccountManagement/AccountManagement";
