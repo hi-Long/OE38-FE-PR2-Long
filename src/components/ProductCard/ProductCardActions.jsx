@@ -2,7 +2,6 @@ import { faRuler } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Button, CardActions, makeStyles, Menu, MenuItem, Box, IconButton } from "@material-ui/core"
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import { useState } from "react"
 
 const useStyles = makeStyles({

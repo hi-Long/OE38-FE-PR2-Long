@@ -3,7 +3,8 @@ import capitalizeFirstLetter from "../helpers/capitalizedFirstLetter"
 
 const initialState = {
     categoryDrawerShowing: false,
-    searchDrawerShowing: false
+    searchDrawerShowing: false,
+    authDrawerShowing: false
 }
 
 // CREATE REDUCER FUNCTIONS FROM INITIAL STATE TO AVOID CODE DUPLICATION
