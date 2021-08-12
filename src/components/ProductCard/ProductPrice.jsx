@@ -1,4 +1,5 @@
 import { CardContent, makeStyles, Typography } from "@material-ui/core"
+import FormattedPrice from "../FormattedPrice/FormattedPrice"
 
 const useStyles = makeStyles({
     root: {
@@ -15,7 +16,7 @@ const ProductCardContent = props => {
             {name}
         </Typography>
         <Typography variant="body2" color="textSecondary" component="p">
-            {price}d
+            <FormattedPrice price={price} />
         </Typography>
     </CardContent>
 }
