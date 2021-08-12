@@ -1,10 +1,25 @@
+import { createTheme, ThemeProvider } from '@material-ui/core';
+import { green, grey } from '@material-ui/core/colors';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
+import Homepage from './pages/Homepage/Homepage';
+
+const theme = createTheme({
+  palette: {
+    primary: { main: grey[900] },
+    secondary: green
+  }
+})
 
 function App() {
   return (
-    <div className="App">
-      Hi!
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <Switch>
+          <Route path='/' render={() => <Homepage />} />
+        </Switch>
+      </div>
+    </ThemeProvider>
   );
 }
 
