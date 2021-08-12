@@ -3,7 +3,7 @@ import { Box, Button, FormControl, FormControlLabel, Grid, makeStyles, Radio, Ra
 import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 import { useReducer } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ACCOUNT_PAGE_PERSONAL_INFO_ADDRESS_INPUT, ACCOUNT_PAGE_PERSONAL_INFO_DOB_INPUT, ACCOUNT_PAGE_PERSONAL_INFO_EMAIL_INPUT, ACCOUNT_PAGE_PERSONAL_INFO_GENDER_INPUT, ACCOUNT_PAGE_PERSONAL_INFO_NAME_INPUT, ACCOUNT_PAGE_PERSONAL_INFO_PHONE_INPUT } from '../../constants';
+import { ACCOUNT_PAGE_PERSONAL_INFO_ADDRESS_INPUT, ACCOUNT_PAGE_PERSONAL_INFO_DOB_INPUT, ACCOUNT_PAGE_PERSONAL_INFO_EMAIL_INPUT, ACCOUNT_PAGE_PERSONAL_INFO_GENDER_INPUT, ACCOUNT_PAGE_PERSONAL_INFO_NAME_INPUT, ACCOUNT_PAGE_PERSONAL_INFO_PHONE_INPUT } from '../../../constants';
 import { updateUser } from '../../store/auth-actions';
 import AccountComponentLayout from './AccountComponentLayout';
 import { formInitialState, formReducer } from './personalInfoReducer';
