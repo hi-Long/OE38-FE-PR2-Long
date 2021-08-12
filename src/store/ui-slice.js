@@ -5,7 +5,9 @@ const initialState = {
     categoryDrawerShowing: false,
     searchDrawerShowing: false,
     authDrawerShowing: false,
-    cartDrawerShowing: false
+    cartDrawerShowing: false,
+    sizeDrawerShowing: false,
+    detailsModalShowing: false
 }
 
 // CREATE REDUCER FUNCTIONS FROM INITIAL STATE TO AVOID CODE DUPLICATION
