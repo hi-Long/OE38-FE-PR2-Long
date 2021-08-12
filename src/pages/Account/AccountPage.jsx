@@ -2,10 +2,10 @@ import { Box, Grid, IconButton, makeStyles } from "@material-ui/core"
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft'
 import { Fragment } from "react"
 import { Route, Switch } from "react-router-dom"
-import ChangePassword from "./components/Account/ChangePassword"
-import OrderHistory from "./components/Account/OrderHistory"
+import ChangePassword from "./components/ChangePassword"
+import OrderHistory from "./components/OrderHistory"
 import PersonalInfo from "./components/PersonalInfo"
-import DeliveryAddress from "./DeliveryAddress/DeliveryAddress"
+import DeliveryAddress from "../../components/DeliveryAddress/DeliveryAddress"
 import Logo from '../../components/Logo/Logo'
 import AccountPageNav from "./AccountPageNav"
 import { ACCOUNT_PAGE_NESTED_DELIVERY, ACCOUNT_PAGE_NESTED_ORDERS, ACCOUNT_PAGE_NESTED_PASSWORD, ACCOUNT_PAGE_NESTED_PERSONAL_INFO } from "../../constants"
@@ -25,10 +25,11 @@ const AccountPage = props => {
 
     return <Fragment>
         <Grid container className={classes.root}>
+            {/* MAIN */}
             <Grid item sm={9}>
                 <Box component="nav" display="flex" alignItems="center" pt={2} pb={5}>
                     <IconButton>
-                        <KeyboardArrowLeftIcon></KeyboardArrowLeftIcon>
+                        <KeyboardArrowLeftIcon />
                     </IconButton>
                     <Box width="100%" justifySelf="center">
                         <Logo></Logo>
@@ -43,10 +44,10 @@ const AccountPage = props => {
                     </Switch>
                 </Box>
             </Grid>
+            {/* NAVBAR */}
             <Grid item sm={3}>
                 <AccountPageNav />
             </Grid>
-
         </Grid>
     </Fragment>
 }
