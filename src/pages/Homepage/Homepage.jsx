@@ -1,11 +1,9 @@
 import PageLayout from "../../components/Layout/PageLayout";
-import ProductCard from "../../components/ProductCard/ProductCard";
-import ProductCardImageOnly from "../../components/ProductCard/ProductCardImageOnly"
+import HomepageMain from "./components/HomepageMain";
 
 const Homepage = () => {
     return <PageLayout>
-        <ProductCard />
-        <ProductCardImageOnly />
+        <HomepageMain></HomepageMain>
     </PageLayout>
 }
 
