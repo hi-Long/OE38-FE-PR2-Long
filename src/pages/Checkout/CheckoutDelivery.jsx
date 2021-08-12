@@ -1,15 +1,33 @@
 import { Box, Button, FormControl, FormControlLabel, Radio, RadioGroup, Typography } from "@material-ui/core"
 import { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom"
 import Confirmation from "../../components/Confirmation/Confirmation"
 import CustomizedSnackbar from "../../components/CustomizedSnackbar/CustomizedSnackbar"
 import DeliveryAddresses from "../../components/DeliveryAddress/DeliveryAddress"
+import { createDelivery } from "../../store/checkout-actions"
+import { checkoutActions } from "../../store/checkout-slice"
 
 const CheckoutDelivery = props => {
+    const dispatch = useDispatch()
     const { handleNextStep, handleBackStep } = props
+    const user = useSelector(state => state.auth.user)
+    const deleteDelivery = useSelector(state => state.checkout.delivery.delete)
+    const selectedDelivery = useSelector(state => state.checkout.delivery.selected)
+    const paymentMethod = useSelector(state => state.checkout.paymentMethod)
     const history = useHistory()
     const [snackbarShowing, setSnackbarShowing] = useState(false)
+    const [errorSnackbarShowing, setErrorSnackbarShowing] = useState(false)
     const [deleteConfirmShowing, setDeleteConfirmShowing] = useState(false)
+
+    const onDeleteDelivery = () => {
+        const updatedDelivery = {
+            ...user,
+            delivery: user.delivery.filter(d => d.id !== deleteDelivery)
+        }
+        dispatch(createDelivery(updatedDelivery))
+        setSnackbarShowing(true)
+    }
 
     const onBackButtonClicked = () => {
         handleBackStep()
@@ -17,8 +35,12 @@ const CheckoutDelivery = props => {
     }
 
     const onNextButtonClicked = () => {
-        handleNextStep()
-        history.push('/checkout/summary')
+        if (paymentMethod && selectedDelivery) {
+            handleNextStep()
+            history.push('/checkout/summary')
+        } else {
+            setErrorSnackbarShowing(true)
+        }
     }
 
     const paymentMethods = [
@@ -39,7 +61,10 @@ const CheckoutDelivery = props => {
                 <Box fontWeight="fontWeightRegular" mt={4} mb={2}> Hình thức thanh toán:</Box>
             </Typography>
             <Box border={1} width="186.5%" p={2}>
-                <RadioGroup aria-label="payment-method" name="payment-method">
+                <RadioGroup
+                    aria-label="payment-method" name="payment-method"
+                    value={paymentMethod}
+                    onChange={event => dispatch(checkoutActions.setPaymentMethod(event.target.value))}>
                     {paymentMethods.map(pm => (
                         <FormControlLabel value={pm} control={<Radio />} label={pm} />
                     ))}
@@ -57,6 +82,12 @@ const CheckoutDelivery = props => {
                 onClick={onNextButtonClicked}>Tiếp tục</Button>
         </Box>
 
+        {/* SNACKBARS FOR MISSING CHECKOUT INFO */}
+        <CustomizedSnackbar
+            showing={errorSnackbarShowing}
+            message="Thiếu thông tin thanh toán!"
+            severity="error"
+            setShowing={setErrorSnackbarShowing} />
         {/* SNACKBARS FOR SUCCESSFUL CHANGE*/}
         <CustomizedSnackbar
             showing={snackbarShowing}
@@ -69,7 +100,7 @@ const CheckoutDelivery = props => {
             content="Bạn chắc chắn muốn xóa chứ"
             confirm="Xác nhận"
             cancel="Hủy"
-            confirmActions={() => { console.log("CONFIRM") }}
+            confirmActions={onDeleteDelivery}
             confirmationShowing={deleteConfirmShowing}
             setConfirmationShowing={setDeleteConfirmShowing} />
     </Box>
