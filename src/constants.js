@@ -4,6 +4,7 @@ export const PRODUCTS_URL = '/products'
 export const PRODUCTS_IMAGES_SRC = '/images/Products'
 export const PRODUCTS_DETAILS_URL = '/products/:id'
 export const PRODUCTS_DETAILS_IMAGES_SRC = '/images/ProductDetails'
+export const CHECKOUT_URL = '/checkout'
 
 export const ACCOUNT_PAGE_NESTED_PERSONAL_INFO = '/account/personal-info'
 export const ACCOUNT_PAGE_NESTED_ORDERS = '/account/orders'
