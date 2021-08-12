@@ -31,6 +31,7 @@ const useStyles = makeStyles({
 })
 
 const NavigationBar = props => {
+    const { localStorageCart, setLocalStorageCart } = props
     const { offsetX, offsetY } = useOffsetPage()
     const [navbarBgr, setNavbarBgr] = useState(false)
     const classes = useStyles()
@@ -53,7 +54,9 @@ const NavigationBar = props => {
         px={4} py={2}>
         <Categories></Categories>
         <Logo></Logo>
-        <Utilities></Utilities>
+        <Utilities
+            localStorageCart={localStorageCart}
+            setLocalStorageCart={setLocalStorageCart}></Utilities>
     </Box >
 }
 

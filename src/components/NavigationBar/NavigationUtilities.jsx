@@ -21,7 +21,8 @@ const useStyles = makeStyles({
     }
 })
 
-const Utilities = () => {
+const Utilities = props => {
+    const { localStorageCart, setLocalStorageCart } = props
     const dispatch = useDispatch()
     const classes = useStyles()
 
@@ -53,11 +54,14 @@ const Utilities = () => {
         <IconButton
             className={classes.toggleButton}
             onClick={() => dispatch(uiActions.setCartDrawerShowing(true))}>
-            <Badge badgeContent={4} color="primary">
+            <Badge badgeContent={localStorageCart.products.length} color="primary">
                 <ShoppingCartOutlinedIcon />
             </Badge>
         </IconButton>
-        <CartDrawer />
+
+        <CartDrawer
+            localStorageCart={localStorageCart}
+            setLocalStorageCart={setLocalStorageCart} />
     </Box>
 }
 
