@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit"
 import capitalizeFirstLetter from "../helpers/capitalizedFirstLetter"
 
 const initialState = {
-    categoryDrawerShowing: false
+    categoryDrawerShowing: false,
+    searchDrawerShowing: false
 }
 
 // CREATE REDUCER FUNCTIONS FROM INITIAL STATE TO AVOID CODE DUPLICATION

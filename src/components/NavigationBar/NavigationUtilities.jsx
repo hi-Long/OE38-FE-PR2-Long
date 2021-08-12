@@ -2,6 +2,9 @@ import { Badge, Box, IconButton, InputAdornment, makeStyles, TextField } from "@
 import PermIdentityIcon from '@material-ui/icons/PermIdentity';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import SearchIcon from '@material-ui/icons/Search';
+import { useDispatch } from "react-redux";
+import { uiActions } from "../../store/ui-slice";
+import SearchDrawer from "../SearchDrawer/SearchDrawer";
 
 const useStyles = makeStyles({
     root: {
@@ -17,6 +20,7 @@ const useStyles = makeStyles({
 })
 
 const Utilities = () => {
+    const dispatch = useDispatch()
     const classes = useStyles()
 
     return <Box className={classes.root} display="flex">
@@ -31,7 +35,9 @@ const Utilities = () => {
                     </InputAdornment>
                 ),
             }}
+            onClick={() => dispatch(uiActions.setSearchDrawerShowing(true))}
         />
+        <SearchDrawer></SearchDrawer>
 
         {/* ACCOUNT */}
         <IconButton className={classes.toggleButton}>
