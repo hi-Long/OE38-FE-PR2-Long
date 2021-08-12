@@ -1,6 +1,7 @@
 import { Box, Button, makeStyles, Typography } from "@material-ui/core"
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
+import { facebookProvider, googleProvider } from "../../../firebase/useAuth";
 
 const useStyles = makeStyles({
     button: {
@@ -13,7 +14,7 @@ const useStyles = makeStyles({
 
 const SignInFooter = props => {
     const classes = useStyles()
-    const { handleTabChange } = props
+    const { handleTabChange, onSignInWithSocialMedia } = props
 
     return <Box width="100%">
         {/* OTHER SIGN IN METHOD */}
@@ -22,7 +23,8 @@ const SignInFooter = props => {
             color="secondary"
             className={classes.button}
             size="large"
-            startIcon={<TwitterIcon />}>
+            startIcon={<TwitterIcon />}
+            onClick={event => onSignInWithSocialMedia(event, googleProvider)}>
             ĐĂNG NHẬP VỚI GOOGLE
         </Button>
 
@@ -31,7 +33,8 @@ const SignInFooter = props => {
             color="default"
             size="large"
             className={classes.button}
-            startIcon={<InstagramIcon />}>
+            startIcon={<InstagramIcon />}
+            onClick={event => onSignInWithSocialMedia(event, facebookProvider)}>
             ĐĂNG NHẬP VỚI FACEBOOK
         </Button>
         {/* SIGN UP */}

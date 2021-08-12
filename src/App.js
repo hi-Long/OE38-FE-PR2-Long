@@ -8,6 +8,10 @@ import ProductDetailsPage from './pages/ProductDetails/ProductDetailsPage';
 import Checkout from './pages/Checkout/CheckoutPage';
 import { IntlProvider } from 'react-intl';
 import { CHECKOUT_URL, HOMEPAGE_URL, PRODUCTS_DETAILS_URL, PRODUCTS_URL } from './constants';
+import firebase from './firebase/firebase';
+import { useDispatch } from 'react-redux';
+import { fetchUser } from './store/auth-actions';
+import { uiActions } from './store/ui-slice';
 
 const theme = createTheme({
   palette: {
@@ -17,6 +21,16 @@ const theme = createTheme({
 })
 
 function App() {
+  const dispatch = useDispatch()
+
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      dispatch(fetchUser(user.uid))
+    } else {
+      dispatch(uiActions.setUserFetching(false))
+    }
+  })
+
   return (
     <ThemeProvider theme={theme}>
       <IntlProvider locale="vi" defaultLocale="vi">

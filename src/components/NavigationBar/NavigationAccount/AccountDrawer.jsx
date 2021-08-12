@@ -17,6 +17,7 @@ const AccountDrawer = props => {
     const classes = useStyles()
     const dispatch = useDispatch()
     const authDrawerShowing = useSelector(state => state.ui.authDrawerShowing)
+    const { isAuth } = useSelector(state => state.auth)
 
     return <Drawer
         className={classes.root}
@@ -24,8 +25,9 @@ const AccountDrawer = props => {
         anchor="right"
         open={authDrawerShowing}
         onClose={() => dispatch(uiActions.setAuthDrawerShowing(false))}>
-        <Auth />
-        <AccountManagement />
+        {isAuth
+            ? <AccountManagement />
+            : <Auth />}
     </Drawer>
 }
 

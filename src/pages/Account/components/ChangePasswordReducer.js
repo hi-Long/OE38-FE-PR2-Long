@@ -32,7 +32,6 @@ const validityUpdatedObj = (state, action, prop) => {
 }
 
 export const formReducer = (state, action) => {
-    console.log('Action: ', action)
     switch (action.type) {
         case ACCOUNT_PAGE_RESET_PASSWORD_CURRENT_INPUT:
             return inputUpdatedObj(state, action, 'currentPassword')
