@@ -33,7 +33,6 @@ const validityUpdatedObj = (state, action, prop) => {
 }
 
 export const formReducer = (state, action) => {
-    console.log('Action: ', action)
     switch (action.type) {
         case FORM_EMAIL_INPUT:
             return inputUpdatedObj(state, action, 'email')
