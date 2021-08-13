@@ -1,3 +1,7 @@
+# Source code
+*.css
+*.html
+
 # Logs
 logs
 *.log
