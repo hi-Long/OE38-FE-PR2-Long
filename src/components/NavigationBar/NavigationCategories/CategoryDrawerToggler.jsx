@@ -1,8 +1,14 @@
 import { IconButton } from "@material-ui/core"
 import DehazeIcon from '@material-ui/icons/Dehaze'
+import { useDispatch } from "react-redux"
+import { uiActions } from "../../../store/ui-slice"
 
 const CategoryDrawerToggler = props => {
-    return <IconButton aria-label="navbar-toggler">
+    const dispatch = useDispatch()
+
+    return <IconButton
+        onMouseOver={() => dispatch(uiActions.setCategoryDrawerShowing(true))}
+        aria-label="navbar-toggler">
         <DehazeIcon></DehazeIcon>
     </IconButton>
 }
