@@ -2,6 +2,8 @@ import { Box, Container, Drawer, Grid, makeStyles } from "@material-ui/core"
 import Logo from "../Logo/Logo"
 import TrendingKeywords from "./TrendingKeywords";
 import SearchDrawerInput from "./SearchInput";
+import ProductCardImageOnly from "../../components/ProductCard/ProductCardImageOnly";
+import ProductCarousel from "../../components/ProductCarousel/ProductCarousel";
 import { useDispatch, useSelector } from "react-redux";
 import { uiActions } from "../../store/ui-slice";
 
@@ -37,6 +39,14 @@ const SearchDrawer = props => {
                     {/* TRENDING KEYWORDS */}
                     <Grid item sm={4}>
                         <TrendingKeywords></TrendingKeywords>
+                    </Grid>
+                    {/* PRODUCTS CAROUSEL */}
+                    <Grid item sm={8}>
+                        <ProductCarousel>
+                            {[1, 2, 3, 4, 5, 6].map(i => (
+                                <ProductCardImageOnly key={i}></ProductCardImageOnly>
+                            ))}
+                        </ProductCarousel>
                     </Grid>
                 </Grid>
             </Box>
