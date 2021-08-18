@@ -29,9 +29,6 @@ const useStyles = makeStyles({
     }
 })
 
-// UNNECESSARY RE-RENDER 
-// TYPING -> SET TO LOADING
-
 const SearchDrawerResults = props => {
     const classes = useStyles(props)
     const { noResults, searchResults } = useSelector(state => state.search)

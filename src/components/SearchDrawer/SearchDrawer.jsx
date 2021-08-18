@@ -4,8 +4,13 @@ import TrendingKeywords from "./TrendingKeywords";
 import SearchDrawerInput from "./SearchInput";
 import ProductCardImageOnly from "../../components/ProductCard/ProductCardImageOnly";
 import ProductCarousel from "../../components/ProductCarousel/ProductCarousel";
+import SearchDrawerResults from "./SearchDrawerResults";
 import { useDispatch, useSelector } from "react-redux";
 import { uiActions } from "../../store/ui-slice";
+import { searchProductsByName } from "../../store/search-action";
+import { searchActions } from "../../store/search-slice";
+import { useCallback, useState } from "react";
+import useDebounce from "../../hooks/useDebounce";
 
 const useStyles = makeStyles({
     root: {
@@ -19,7 +24,18 @@ const useStyles = makeStyles({
 const SearchDrawer = props => {
     const classes = useStyles()
     const dispatch = useDispatch()
+    const [searchText, setSearchText] = useState('')
     const searchDrawerShowing = useSelector(state => state.ui.searchDrawerShowing)
+
+    const searchTextOnChange = useCallback(() => {
+        if (!searchText) {
+            dispatch(searchActions.resetResults())
+        } else {
+            dispatch(searchProductsByName(searchText))
+        }
+    }, [dispatch, searchText])
+
+    useDebounce(searchText, searchTextOnChange, 500)
 
     return <Drawer
         className={classes.root}
@@ -31,7 +47,8 @@ const SearchDrawer = props => {
         <Container maxWidth="md">
             {/* SEARCH INPUT + RESULTS */}
             <Box position="relative">
-                <SearchDrawerInput></SearchDrawerInput>
+                <SearchDrawerInput setSearchText={setSearchText}></SearchDrawerInput>
+                <SearchDrawerResults searchText={searchText}></SearchDrawerResults>
             </Box>
             {/* SEARCH INPUT + CAROUSEL */}
             <Box py={5}>
