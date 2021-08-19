@@ -5,6 +5,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import { useDispatch } from "react-redux";
 import { uiActions } from "../../store/ui-slice";
 import SearchDrawer from "../SearchDrawer/SearchDrawer";
+import AccountManagementDrawer from "./NavigationAccount/AccountDrawer.jsx";
 
 const useStyles = makeStyles({
     root: {
@@ -37,12 +38,15 @@ const Utilities = () => {
             }}
             onClick={() => dispatch(uiActions.setSearchDrawerShowing(true))}
         />
-        <SearchDrawer></SearchDrawer>
+        <SearchDrawer />
 
         {/* ACCOUNT */}
-        <IconButton className={classes.toggleButton}>
-            <PermIdentityIcon></PermIdentityIcon>
+        <IconButton
+            className={classes.toggleButton}
+            onClick={() => dispatch(uiActions.setAuthDrawerShowing(true))}>
+            <PermIdentityIcon />
         </IconButton>
+        <AccountManagementDrawer />
 
         {/* CART */}
         <IconButton className={classes.toggleButton}>

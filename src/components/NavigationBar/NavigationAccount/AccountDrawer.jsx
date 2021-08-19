@@ -1,8 +1,8 @@
 import { Drawer, makeStyles } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import { uiActions } from "../../../store/ui-slice";
-import AccountManagement from "../../AccountManagement/AccountManagement";
 import Auth from "../../Auth/Auth";
+import AccountManagement from "./AccountManagement/AccountManagement"
 
 const useStyles = makeStyles({
     root: {
@@ -13,11 +13,10 @@ const useStyles = makeStyles({
     }
 })
 
-const AccountManagementDrawer = props => {
+const AccountDrawer = props => {
     const classes = useStyles()
     const dispatch = useDispatch()
     const authDrawerShowing = useSelector(state => state.ui.authDrawerShowing)
-    const { isAuth } = useSelector(state => state.auth)
 
     return <Drawer
         className={classes.root}
@@ -25,8 +24,10 @@ const AccountManagementDrawer = props => {
         anchor="right"
         open={authDrawerShowing}
         onClose={() => dispatch(uiActions.setAuthDrawerShowing(false))}>
-        {isAuth ? <AccountManagement /> : <Auth />}
+        <Auth />
+        <AccountManagement />
     </Drawer>
 }
 
-export default AccountManagementDrawer
+export default AccountDrawer
+
