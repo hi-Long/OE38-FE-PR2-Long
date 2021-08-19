@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { uiActions } from "../../store/ui-slice";
 import SearchDrawer from "../SearchDrawer/SearchDrawer";
 import AccountManagementDrawer from "./NavigationAccount/AccountDrawer.jsx";
+import CartDrawer from "../Cart/CartDrawer"
 
 const useStyles = makeStyles({
     root: {
@@ -49,11 +50,14 @@ const Utilities = () => {
         <AccountManagementDrawer />
 
         {/* CART */}
-        <IconButton className={classes.toggleButton}>
+        <IconButton
+            className={classes.toggleButton}
+            onClick={() => dispatch(uiActions.setCartDrawerShowing(true))}>
             <Badge badgeContent={4} color="primary">
                 <ShoppingCartOutlinedIcon />
             </Badge>
         </IconButton>
+        <CartDrawer />
     </Box>
 }
 
