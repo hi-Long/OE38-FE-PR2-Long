@@ -1,6 +1,8 @@
 import { makeStyles } from "@material-ui/core"
 import HomepageBanners from "./HomepageBanners"
+import HomepageCarousels from "./HomepageCarousels"
 import HomepageCategories from "./HomepageCategories"
+import HomepageSignUpForm from "./HomepageSignUpForm"
 
 const useStyles = makeStyles({
     root: {
@@ -13,6 +15,8 @@ const HomepageMain = props => {
     return <main className={classes.root}>
         <HomepageBanners />
         <HomepageCategories />
+        <HomepageCarousels />
+        <HomepageSignUpForm />
     </main>
 }
 
