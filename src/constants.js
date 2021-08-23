@@ -18,5 +18,6 @@ export const ACCOUNT_PAGE_RESET_PASSWORD_RETYPED_INPUT = 'retype-input'
 export const ACCOUNT_PAGE_RESET_PASSWORD_RETYPES_VALIDITY = 'retype-valid'
 
 export const SERVER = "http://localhost:5000"
-export const SERVER_PRODUCTS = `${SERVER}/products`
 export const SERVER_ROUTE_USER = `${SERVER}/users`
+export const SERVER_ROUTE_CONCEPTS = `${SERVER}/concepts`
+export const SERVER_ROUTE_PRODUCTS = `${SERVER}/products`

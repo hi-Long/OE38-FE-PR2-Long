@@ -1,10 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { SERVER_PRODUCTS } from '../constants'
+import { SERVER_ROUTE_PRODUCTS } from '../constants'
 
 // SEARCH PRODUCTS BY NAME
 export const searchProductsByName = createAsyncThunk('search/searchByName', async name => {
-    const response = await axios.get(`${SERVER_PRODUCTS}?name_like=${name}`)
+    const response = await axios.get(`${SERVER_ROUTE_PRODUCTS}?name_like=${name}`)
     const responseData = response.data
 
     // Get the number of results
