@@ -3,6 +3,7 @@ import StraightenIcon from '@material-ui/icons/Straighten';
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { uiActions } from "../../../../store/ui-slice";
+import SizeDrawer from "../SizeDrawer";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -39,6 +40,8 @@ const ProductDetailsOverview = props => {
             startIcon={<StraightenIcon />}>
             Kích cỡ
         </Button>
+        {/* SIZE DRAWER */}
+        <SizeDrawer></SizeDrawer>
         {/* SIZES */}
         <Box display="flex" justifyContent="space-between">
             {['XS', 'S', 'M', 'L', 'XL'].map(s => (

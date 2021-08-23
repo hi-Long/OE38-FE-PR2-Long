@@ -37,6 +37,8 @@ const ProductDetailsSpecs = props => {
             • Họa tiết được in lên áo, có độ bền cao.
         </Typography>
         <Button className={classes.button} onClick={() => toggleDetailsModal(true)}>Thông tin chi tiết & Bảo quản</Button>
+        {/* DETAILS MODAL */}
+        <ProductDetailsModal />
         <Divider />
     </Box>
 }
