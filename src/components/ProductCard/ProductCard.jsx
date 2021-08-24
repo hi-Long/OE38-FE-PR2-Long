@@ -20,7 +20,7 @@ const ProductCard = props => {
                 <ProductImage
                     image="https://cdn.boo.vn/products/4618/ao-phong-pattern-boolaab-yz5fw-0.jpg"
                     height={400} />
-                <ProductCardContent name="AO PHONG OVERSIZE" price="499.000"></ProductCardContent>
+                <ProductCardContent name="AO PHONG OVERSIZE" price="499000"></ProductCardContent>
             </CardActionArea>
             <ProductCardActions className={classes.actions}></ProductCardActions>
         </Card>

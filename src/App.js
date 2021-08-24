@@ -5,6 +5,7 @@ import './App.css';
 import Homepage from './pages/Homepage/Homepage';
 import ProductsPage from './pages/Products/ProductsPage';
 import ProductDetailsPage from './pages/ProductDetails/ProductDetailsPage';
+import Checkout from './pages/Checkout/CheckoutPage';
 
 const theme = createTheme({
   palette: {
@@ -20,6 +21,7 @@ function App() {
         <Switch>
           <Route path='/products/:id' render={() => <ProductDetailsPage />} />
           <Route path='/products' render={() => <ProductsPage />} />
+          <Route path='/checkout' render={() => <Checkout />} />
           <Route path='/' render={() => <Homepage />} />
         </Switch>
       </div>
