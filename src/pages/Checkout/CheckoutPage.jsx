@@ -2,6 +2,7 @@ import { Box, Grid, makeStyles, Typography } from "@material-ui/core"
 import { Fragment, useState } from "react"
 import { Link, Route, Switch } from "react-router-dom"
 import CartCheckoutDrawer from "../../components/Cart/CartCheckoutDrawer"
+import { CHECKOUT_PAGE_NESTED_AUTH, CHECKOUT_PAGE_NESTED_DELIVERY, CHECKOUT_PAGE_NESTED_SUMMARY } from "../../constants"
 import CheckoutAuth from "./CheckoutAuth"
 import CheckoutDelivery from "./CheckoutDelivery"
 import CheckoutPageNav from "./CheckoutPageNav"
@@ -47,16 +48,16 @@ const Checkout = props => {
                         <CheckoutStepper activeStep={activeStep} />
                         <Switch>
                             <Route
-                                path={`/checkout/auth`}
+                                path={CHECKOUT_PAGE_NESTED_AUTH}
                                 render={() => <CheckoutAuth handleNextStep={handleNextStep} />} />
                             {activeStep >= 1
                                 && <Route
-                                    path={`/checkout/delivery`}
+                                    path={CHECKOUT_PAGE_NESTED_DELIVERY}
                                     render={() => <CheckoutDelivery handleNextStep={handleNextStep} handleBackStep={handleBackStep} />} />
                             }
                             {activeStep >= 2
                                 && <Route
-                                    path={`/checkout/summary`}
+                                    path={CHECKOUT_PAGE_NESTED_SUMMARY}
                                     render={() => <CheckoutSummary
                                         handleNextStep={handleNextStep}
                                         handleBackStep={handleBackStep}
