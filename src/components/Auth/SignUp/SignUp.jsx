@@ -5,13 +5,30 @@ import SignUpHeader from "./SignUpHeader"
 
 const SignUp = props => {
     const {
+        error,
+        loading,
+        onCheckout,
+        setAccountManagementDrawerIsOpen,
         handleTabChange,
-        formDispatch, formState } = props
+        onSignUpFormSubmitHandler,
+        formDispatch,
+        formState } = props
 
     return <Fragment>
-        <SignUpHeader handleTabChange={handleTabChange} />
-        <SignUpForm formState={formState} formDispatch={formDispatch} />
-        <SignUpFooter handleTabChange={handleTabChange}></SignUpFooter>
+        {/* HEADER */}
+        <SignUpHeader
+            onCheckout={onCheckout}
+            handleTabChange={handleTabChange}
+            setAccountManagementDrawerIsOpen={setAccountManagementDrawerIsOpen} />
+        {/* FORM */}
+        <SignUpForm
+            error={error}
+            loading={loading}
+            formState={formState}
+            formDispatch={formDispatch}
+            onSignUpFormSubmitHandler={onSignUpFormSubmitHandler} />
+        {/* FOOTER */}
+        <SignUpFooter handleTabChange={handleTabChange} />
     </Fragment >
 }
 

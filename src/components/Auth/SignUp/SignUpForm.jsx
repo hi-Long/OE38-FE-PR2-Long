@@ -1,4 +1,4 @@
-import { Button, makeStyles, TextField } from "@material-ui/core"
+import { Button, CircularProgress, makeStyles, TextField, Typography } from "@material-ui/core"
 import PasswordInput from "../../UI/InputPassword"
 import { FORM_EMAIL_INPUT, FORM_NAME_INPUT, FORM_PASSWORD_INPUT, FORM_PHONE_INPUT } from "../authConstants"
 
@@ -23,7 +23,12 @@ const formInputs = [
 
 const SignUpForm = props => {
     const classes = useStyles()
-    const { formState, formDispatch } = props
+    const {
+        error,
+        loading,
+        onSignUpFormSubmitHandler,
+        formState,
+        formDispatch } = props
 
     const onPasswordInput = value => {
         formDispatch({ type: FORM_PASSWORD_INPUT, payload: value })
@@ -31,7 +36,8 @@ const SignUpForm = props => {
 
     return <form
         className={classes["form--sign-up"]}
-        id="sign-up">
+        id="sign-up"
+        onSubmit={event => onSignUpFormSubmitHandler(event)}>
         {/* OTHER INPUTS */}
         {formInputs.map(input => (
             <TextField key={input.field}
@@ -49,11 +55,17 @@ const SignUpForm = props => {
             error={formState.password.error}
             onPasswordInput={() => onPasswordInput()}
             label="Password"></PasswordInput>
+        {/* SHOW NOTIFICATION IS ERROR */}
+        {error && <Typography className={classes.error}>{error}</Typography>}
         {/* SUBMIT BUTTON */}
         <Button
             type="submit" variant="contained"
             className={classes.button}
-            color="primary" size="large" disableElevation>TẠO TÀI KHOẢN</Button>
+            color="primary" size="large" disableElevation>
+            {loading
+                ? <CircularProgress />
+                : "TẠO TÀI KHOẢN"}
+        </Button>
     </form >
 }
 

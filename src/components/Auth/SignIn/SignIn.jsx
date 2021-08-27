@@ -4,12 +4,33 @@ import SignInForm from "./SignInForm";
 import SignInHeader from "./SignInHeader";
 
 const SignIn = props => {
-    const { handleTabChange, formDispatch, formState } = props
+    const {
+        noButtons,
+        error,
+        loading,
+        onCheckout,
+        handleTabChange,
+        setAccountManagementDrawerIsOpen,
+        onSignInWithEmailAndPassword,
+        onSignInWithSocialMedia,
+        formDispatch, formState } = props
 
     return <Fragment>
-        <SignInHeader />
-        <SignInForm formState={formState} formDispatch={formDispatch} />
-        <SignInFooter handleTabChange={handleTabChange} />
+        <SignInHeader
+            onCheckout={onCheckout}
+            noButtons={noButtons}
+            setAccountManagementDrawerIsOpen={setAccountManagementDrawerIsOpen} />
+
+        <SignInForm
+            error={error}
+            loading={loading}
+            formState={formState}
+            formDispatch={formDispatch}
+            onSignInWithEmailAndPassword={onSignInWithEmailAndPassword} />
+
+        <SignInFooter
+            handleTabChange={handleTabChange}
+            onSignInWithSocialMedia={onSignInWithSocialMedia} />
     </Fragment>
 }
 

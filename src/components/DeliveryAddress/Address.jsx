@@ -17,7 +17,6 @@ const useStyles = makeStyles({
 const Address = props => {
     const { delivery, setSnackbarShowing, setDeleteConfirmShowing } = props
     const selectedDelivery = useSelector(state => state.checkout.delivery.selected)
-    console.log(selectedDelivery)
     const classes = useStyles()
     const [updateFormShowing, setUpdateFormShowing] = useState(false)
 
