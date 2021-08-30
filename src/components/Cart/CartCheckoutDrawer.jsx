@@ -13,6 +13,7 @@ const useStyles = makeStyles({
 })
 
 const CartCheckoutDrawer = props => {
+    const { localStorageCart, setLocalStorageCart } = props
     const classes = useStyles()
 
     return <Drawer
@@ -20,10 +21,15 @@ const CartCheckoutDrawer = props => {
         display="flex"
         anchor="right"
         variant="permanent">
-        <CartDrawerHeader noButtons></CartDrawerHeader>
-        <CartDrawerProducts></CartDrawerProducts>
-        <CartDrawerSummary noButtons></CartDrawerSummary>
-    </Drawer>
+
+        <CartDrawerHeader noButtons noItems={localStorageCart.products.length} />
+
+        <CartDrawerProducts
+            localStorageCart={localStorageCart}
+            setLocalStorageCart={setLocalStorageCart} />
+
+        <CartDrawerSummary noButtons />
+    </Drawer >
 }
 
 export default CartCheckoutDrawer
